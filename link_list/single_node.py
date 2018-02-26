@@ -1,4 +1,5 @@
 # coding:utf-8
+'''单链表'''
 
 
 class Node(object):
@@ -15,16 +16,19 @@ class SingleLinkList(object):
 	'''单链表'''
 	def __init__(self, node=None):
 		'''初始化链表,'''
+		node = Node(node)
 		self.__head = node
 
 	def is_empty(self):
 		'''判断链表是否为空'''
-		return self.__head == None
+		return self.__head.elem == None
 
 	def length(self):
 		'''返回这个链表的长度'''
 		# 计数器用来记录元素的个数，也就是链表的长度
 		count = 0
+		if self.is_empty():
+			return count
 		# 创建一个游标来表示当前所指的节点
 		cur = self.__head
 		while cur != None:
@@ -106,15 +110,16 @@ class SingleLinkList(object):
 
 
 if __name__ == "__main__":
-	sll = SingleLinkList()
-	# print("链表起始长度为：", sll.length())
-	# print("链表是否为空：", sll.is_empty())
-	#
+	sll = SingleLinkList(5)
+	sll.travel()
+	print("链表起始长度为：", sll.length())
+	print("链表是否为空：", sll.is_empty())
+	# 测试append()
 	sll.append(1)
 	sll.append(2)
 	sll.append(3)
 	sll.append(4)
-	print('追加之后的长度为：', sll.length())
+	# print('追加之后的长度为：', sll.length())
 	sll.travel()
 	# 测试add()
 	sll.add(5)
@@ -122,7 +127,9 @@ if __name__ == "__main__":
 	# 测试insert
 	sll.insert(3,9)
 	sll.travel()
-	# 测试remove
+	print("链表现在长度为：", sll.length())
+	print("链表现在是否为空：", sll.is_empty())
+	# # 测试remove
 	sll.remove(9)
 	sll.travel()
 	# 测试search
