@@ -52,6 +52,7 @@ class DLinkList(object):
 			self.__head = node
 		else:
 			node._next = self.__head
+			self.__head._prev = node
 			self.__head = node
 
 	def append(self, item):
@@ -81,27 +82,32 @@ class DLinkList(object):
 				cur = cur._next
 			node._prev = cur
 			node._next = cur._next
+			cur._next._prev = node
 			cur._next = node
 
 	def remove(self, item):
 		'''删除节点'''
 		if self.is_empty():
 			return
-		else:
-			cur = self.__head
-			if cur.elem == item:
-				# 删除的是头结点
-				self.__head = cur._next
+		cur = self.__head
+		if cur.elem == item:
+			# 如果是首结点的元素
+			if cur._next == None:
+				# 表示只有一个元素
+				self.__head = None
 			else:
-				while cur._next != None:
-					if cur.elem == item:
-						# 找到了
-						cur._next._prev = cur._prev
-						cur._prev._next = cur._next
-						return
-					else:
-						cur = cur._next
-				cur._prev._next = None
+				cur._next._prev = None
+				self.__head = cur._next
+			return
+		while cur._next != None:
+			if cur.elem == item:
+				cur._prev._next = cur._next
+				cur._next._prev = cur._prev
+				return
+			cur = cur._next
+		# 删除的是最后一个结点元素
+		cur._prev._next = None
+
 	def search(self,item):
 		'''查找节点是否存在'''
 		if self.is_empty():
@@ -139,9 +145,9 @@ if __name__ == '__main__':
 	dll.remove(1)
 	print("删除前：")
 	dll.travel()
-	dll.remove(7)
+	dll.remove(6)
 	print('链表长度为', dll.length())
 	dll.travel()
 	# 测试search()
-	print(dll.search(10))
+	print(dll.search(4))
 
