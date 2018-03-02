@@ -35,6 +35,7 @@ if __name__ == '__main__':
 	dqueue.add_head(8)
 	dqueue.add_head(9)
 	dqueue.add_end(7)
+	dqueue.add_end(6)
 	print(dqueue.pop_head())
 	print(dqueue.pop_end())
 	print(dqueue.size())
