@@ -173,5 +173,4 @@ if __name__ == '__main__':
 	scl.remove(2)
 	scl.travel()
 	print('链表长度:', scl.length())
-	测试search()
 	print(scl.search(5))
