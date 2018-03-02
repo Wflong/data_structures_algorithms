@@ -1,5 +1,5 @@
 # coding:utf-8
-'''单链表 '''
+'''单链表'''
 
 
 class Node(object):
