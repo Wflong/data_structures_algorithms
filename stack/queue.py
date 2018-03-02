@@ -31,3 +31,4 @@ if __name__ == '__main__':
 	print(queue.size())
 	print(queue.is_empty())
 	print(queue.dequeue())
+	print(queue.dequeue())
