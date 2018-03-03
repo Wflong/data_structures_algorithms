@@ -16,12 +16,13 @@ class SingleLinkList(object):
 	'''单链表'''
 	def __init__(self, node=None):
 		'''初始化链表,'''
-		node = Node(node)
+		if node:
+			node = Node(node)
 		self.__head = node
 
 	def is_empty(self):
 		'''判断链表是否为空'''
-		return self.__head.elem == None
+		return self.__head == None
 
 	def length(self):
 		'''返回这个链表的长度'''
@@ -38,6 +39,8 @@ class SingleLinkList(object):
 
 	def travel(self):
 		"""遍历整个链表"""
+		if self.is_empty():
+			return
 		cur = self.__head
 		while cur != None:
 			print(cur.elem, end=" ")
@@ -110,7 +113,7 @@ class SingleLinkList(object):
 
 
 if __name__ == "__main__":
-	sll = SingleLinkList(5)
+	sll = SingleLinkList(100)
 	sll.travel()
 	print("链表起始长度为：", sll.length())
 	print("链表是否为空：", sll.is_empty())
