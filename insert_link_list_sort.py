@@ -5,7 +5,7 @@ from single_link_list import SingleLinkList
 
 def insert_sort_elem(l):
 	'''通过元素的倒换实现排序'''
-	pass
+	cur =
 
 
 def insert_sort_node(l):
