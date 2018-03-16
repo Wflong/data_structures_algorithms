@@ -48,15 +48,4 @@ class BinTree:
 					q.append(cur_node.rchild)
 
 
-if __name__ == '__main__':
-	# 测试代码
-	tree = BinTree()
-	print(tree.is_empty())
-	tree.add_to_tree(5)
-	tree.add_to_tree(6)
-	tree.add_to_tree(7)
-	tree.add_to_tree(8)
-	tree.add_to_tree(9)
-	print(tree.is_empty())
-
 
