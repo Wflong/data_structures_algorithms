@@ -10,7 +10,7 @@ def kmp_matching(t, p):
 	# pnext = find_next(p)
 	# 优化之后的next数组
 	pnext = find_next_better(p)
-	print(pnext)
+	# print(pnext)
 	# m:模式串的长度，n:目标串的长度
 	n, m = len(t), len(p)
 	j, i = 0, 0

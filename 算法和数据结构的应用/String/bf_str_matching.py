@@ -26,5 +26,5 @@ def naive_matching(t, p):
 
 
 if __name__ == '__main__':
-	print(naive_matching('abd', 'fdsafefwabc'))
+	print(naive_matching('sa', 'fdsafefwabc'))
 
