@@ -24,7 +24,6 @@ class BinTree:
 		node = Node(item)
 		if self.is_empty():
 			self.root = node
-			print('根: ',self.root.elem)
 		else:
 			# 作为缓冲
 			q = [self.root]
@@ -35,14 +34,12 @@ class BinTree:
 				# 判断左子树空
 				if not cur_node.lchild:
 					cur_node.lchild = node
-					print('左: ', cur_node.lchild.elem)
 					return self
 				else:
 					q.append(cur_node.lchild)
 				# 判断右子树是否空
 				if not cur_node.rchild:
 					cur_node.rchild = node
-					print('右: ', cur_node.rchild.elem)
 					return self
 				else:
 					q.append(cur_node.rchild)
